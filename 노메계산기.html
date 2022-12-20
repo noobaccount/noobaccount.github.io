@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input tag examples</title>
+</head>
+
+<body>
+    <h3>노메 계산기</h3>
+    <font size="7em" color="blue"> 시간 입력 </font><br>
+    <input style = "font-size:40pt" id = "time" type = "number" autofocus>
+    <input type = "button" style = "font-size:40pt" value = "확인" id = "button">
+    <input type = "button" style = "font-size:40pt" value = "지우기" id = "reset"><br>
+    <font size = "7em" color = "blue"> 장판 생성 시간 </font><br>
+    <textarea rows = "1" cols = "27", style = "font-size:40pt", id = "result" readonly></textarea>
+    <script>
+        // 확인 버튼
+        document.getElementById("button").onclick = function() {
+	var time = document.getElementById("time").value;
+	if (time.length != 4)
+	    document.getElementById("result").innerText = "입력 형식이 잘못되었습니다.";
+	else {
+	    var minute = time.substring(0,2);
+	    var second = time.substring(2,4);
+		
+	    // 입력형식 "mm:ss" 만약 "0m:0s"면 0을 없애줌
+	    if (minute[0] == 0)
+	        minute = minute[1];
+    	    else if (second[0] == 0)
+	        second = second[1];
+
+	    // 입력된 second가 40보다 작으면 second+60-40이 되고 minute-1이 되야함	
+	    if (second-40 < 0) {
+	        minute = minute-2;
+	        second = parseInt(second)+20;
+	    }
+	    // 정상적으로 1분 40초를 뺌
+	    else {
+	        minute = minute-1;
+	        second = second-40;
+	    }
+	    
+	    // minute, second가 음수면 time over
+	    if (minute < 0 || second < 0)
+	         document.getElementById("result").innerText = "time over";
+	   // 시간 출력
+	    else {
+	        if (minute.toString().length == 1) // 한 자리면 앞에 0을 붙임
+	            minute = "0" + minute;
+	        if (second.toString().length == 1) // 한 자리면 앞에 0을 붙임
+	            second = "0" + second;
+	        document.getElementById("result").innerText = minute +":"+second;
+
+	        // 출력된 시간을 클립보드로 복사
+	        var copyText = document.getElementById("result");
+	        copyText.select();
+	        copyText.setSelectionRange(0, 99999);
+	        document.execCommand("copy");
+	    }
+	}
+        }
+        
+        // 지우기 버튼
+        document.getElementById("reset").onclick = function() {
+	document.getElementById("time").value = null;
+            document.getElementById("time").focus();
+        }
+    </script>
+
+</body>
+
+</html>
