@@ -4,14 +4,16 @@
         <title>viewport</title>
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1">
         <style>
-            body{
-                background-color: red;
-                #pc{display: block;}
-                #mobile_portrait{display: none;}
-                #mobile_landscape{display: none;}
-                #print{display: none;}  
+            @media screen and (max-width: 1920px){
+                body{
+                    background-color: red;
+                    #pc{display: block;}
+                    #mobile_portrait{display: none;}
+                    #mobile_landscape{display: none;}
+                    #print{display: none;}  
+                }
             }
-            @media screen and (max-width: 1080px) and (orientation:portrait){
+            @media screen and (max-width: 576px) and (orientation:portrait){
                 body{
                     background-color: blue;
                     #pc{display: none;}
@@ -20,7 +22,7 @@
                     #print{display: none;}
                 }
             }
-            @media screen and (max-width: 2400px) and (orientation:landscape){
+            @media screen and (max-width: 768px) and (orientation:landscape){
                 body{
                     background-color: violet;
                     #pc{display: none;}
