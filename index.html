@@ -2,19 +2,21 @@
 <html>
     <head>
         <title>viewport</title>
-        <meta name="viewport" content="user-scalable=no, initial-scale=1">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum=scale=1">
         <style>
             body{
                 background-color: red;
                 #pc{display: block;}
-                #mobile{display: none;}
+                #mobile_portrait{display: none;}
+                #mobile_landscape{display: none;}
                 #print{display: none;}
             }
             @media screen and (orientation:portrait){
                 body{
                     background-color: blue;
                     #pc{display: none;}
-                    #mobile{display: block;}
+                    #mobile_portrait{display: block;}
+                    #mobile_landscape{display: none;}
                     #print{display: none;}
                 }
             }
@@ -22,7 +24,8 @@
                 body{
                     background-color: violet;
                     #pc{display: none;}
-                    #mobile{display: block;}
+                    #mobile_portrait{display: none;}
+                    #mobile_landscape{display: block;}
                     #print{display: none;}
                 }
             }
@@ -30,7 +33,8 @@
                 body{
                     background-color: green;
                     #pc{display: none;}
-                    #mobile{display: none;}
+                    #mobile_portrait{display: none;}
+                    #mobile_landscape{display: none;}
                     #print{display: block;}
                 }
             }
@@ -39,7 +43,8 @@
     <body>
         <h1>뷰포트 설정</h1>
         <h2 id="pc">pc는 빨간색</h2>
-        <h2 id="mobile">mobile은 파란색</h2>
+        <h2 id="mobile_landscape">mobile은 세로는 파란색</h2>
+        <h2 id="mobile_portrait">mobile은 세로는 파란색</h2>
         <h2 id="print">미리보기는 초록색</h2>
         <h2 id="landscape">수평은 보라</h2>
         <p>동백꽃<br>
