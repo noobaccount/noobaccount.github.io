@@ -6,21 +6,26 @@
         <style>
             body{
                 background-color: red;
-                #pc{visibility: visible;}
-                #mobile{visibility: hidden;}
-                #print{visibility: hidden;}
+                #pc{display: block;}
+                #mobile{display: none;}
+                #print{display: none;}
+                @media (orientation: landscape){body{background-color: violet;}}
             }
             @media screen and (max-width:767px){
-                body{background-color: blue;}
-                #pc{visibility: hidden;}
-                #mobile{visibility: visible;}
-                #print{visibility: hidden;}
+                body{
+                    background-color: blue;
+                    #pc{display: none;}
+                    #mobile{display: block;}
+                    #print{display: none;}
+                }
             }
             @media print{
-                body{background-color: green;}
-                #pc{visibility: hidden;}
-                #mobile{visibility: hidden;}
-                #print{visibility: visible;}
+                body{
+                    background-color: green;
+                    #pc{display: none;}
+                    #mobile{display: none;}
+                    #print{display: block;}
+                }
             }
         </style>
     </head>
@@ -29,6 +34,7 @@
         <h2 id="pc">pc는 빨간색</h2>
         <h2 id="mobile">mobile은 파란색</h2>
         <h2 id="print">미리보기는 초록색</h2>
+        <h2 id="landscape">수평은 보라</h2>
         <p>동백꽃<br>
             오늘도 또 우리 수탉이 막 쫓기었다.<br>
             내가 점심을 먹고 나무를 하러 갈 양으로 나올 때이었다.<br>
