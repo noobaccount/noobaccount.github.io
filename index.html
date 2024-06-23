@@ -4,14 +4,31 @@
         <title>viewport</title>
         <meta name="viewport" content="user-scalable=no, initial-scale=1">
         <style>
-            body{background-color: red;}
+            body{
+                background-color: red;
+                #pc{visibility: visible;}
+                #mobile{visibility: hidden;}
+                #print{visibility: hidden;}
+            }
             @media screen and (max-width:767px){
                 body{background-color: blue;}
+                #pc{visibility: hidden;}
+                #mobile{visibility: visible;}
+                #print{visibility: hidden;}
+            }
+            @media print{
+                body{background-color: green;}
+                #pc{visibility: hidden;}
+                #mobile{visibility: hidden;}
+                #print{visibility: visible;}
             }
         </style>
     </head>
     <body>
         <h1>뷰포트 설정</h1>
+        <h2 id="pc">pc는 빨간색</h2>
+        <h2 id="mobile">mobile은 파란색</h2>
+        <h2 id="print">미리보기는 초록색</h2>
         <p>동백꽃<br>
             오늘도 또 우리 수탉이 막 쫓기었다.<br>
             내가 점심을 먹고 나무를 하러 갈 양으로 나올 때이었다.<br>
