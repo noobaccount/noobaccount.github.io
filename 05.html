@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>정렬, 요소배치</title>
+        <style>
+            #align_box{
+                overflow:hidden;
+            }
+            .item{
+                float: left;
+                padding: 3px;
+                margin: 3px;
+                border: 1px solid black;
+            }
+            #center{
+                width: 800px;
+                margin: 0 auto;
+            }
+            #align_box3{
+                width: 500px;
+                margin: 0 auto;
+            }
+            #top{
+                background-color: red;
+            }
+            #middle{
+                overflow: hidden;
+            }
+            #left{
+                width: 150px;
+                background-color: orange;
+                float: left;
+            }
+            #right{
+                width: 350px;
+                background-color: yellow;
+                float: left;
+            }
+            #bottom{
+                background-color: green;
+            }
+            #circle_box{
+                width: 500px;
+                height: 300px;
+                border: 1px solid black;
+                position: relative;
+            }
+            .circle{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                position: absolute;
+            }
+            #red{
+                background-color: red;
+                left: 20px;
+                top: 20px;
+            }
+            #yellow{
+                background-color: yellow;
+                right: 20px;
+                top: 20px;
+            }
+            #green{
+                background-color: green;
+                left: 20px;
+                bottom: 20px;
+            }
+            #blue{
+                background-color: blue;
+                right: 20px;
+                bottom: 20px;
+            }
+            #background{
+                position: relative;
+                height: 500px;
+                background-color: red;
+            }
+            #element_center_box{
+                width: 500px;
+                height: 250px;
+                background-color: orange;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin-left: -250px;
+                margin-top: -125px;
+            }
+            #bar{
+                background-color: blue;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                bottom: 0px;
+                width: 5px;
+            }
+            #ellipsis{
+                font-size: 50px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            #normal{
+                font-size: 50px;
+                white-space: normal;
+            }
+            #nowrap{
+                font-size: 50px;
+                white-space: nowrap;
+            }
+            #pre{
+                font-size: 50px;
+                white-space: pre;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>수평 정렬</h1>
+        <div id="align_box1">
+            <div class="item">메뉴-1</div>
+            <div class="item">메뉴-2</div>
+            <div class="item">메뉴-3</div>
+            <div class="item">메뉴-4</div>
+        </div>
+        <p>부모에 hidden이 있으면 다음 태그가 아래로 감</p>
+        <div id="align_box2">
+            <div class="item">메뉴-1</div>
+            <div class="item">메뉴-2</div>
+            <div class="item">메뉴-3</div>
+            <div class="item">메뉴-4</div>
+        </div>
+        <p>부모에 hidden이 없으면 이렇게 옆에 붙음</p>
+        <hr>
+        
+        <h1>중앙 정렬</h1>
+        <div id="center">
+            <h2>마진 속성을 0 auto로 하면</h2>
+            <p>이렇게 중앙으로 정렬됨</p>
+            <p>위 아래에는 값을 주지 않고 좌우는 균등하게 값을 주어 중앙에 두게 되는 것</p>
+        </div>
+        <hr>
+
+        <h1>one true 정렬</h1>
+        <div id="align_box3">
+            <div id="top">위쪽에 배치할 글</div>
+            <div id="middle">
+                <div id="left">********왼쪽에 배치할 글********</div>
+                <div id="right">오른쪽에 배치할 글</div>
+            </div>
+            <div id="bottom">아래쪽에 배치할 글</div>
+        </div>
+        <hr>
+
+        <h1>요소 배치-절대 위치</h1>
+        <div id="circle_box">
+            <div id="red" class="circle"></div>
+            <div id="yellow" class="circle"></div>
+            <div id="green" class="circle"></div>
+            <div id="blue" class="circle"></div>
+        </div>
+        <hr>
+
+        <h1>요소 배치-중앙</h1>
+        <div id="background">
+            <div id="element_center_box">
+                <h1>요소를 중앙에 배치<h1>
+            </div>
+        </div>
+        <hr>
+
+        <h1>요소 배치-고정</h1>
+        <p>왼쪽에 파란 선이 고정시킨 요소</p>
+        <div id="bar"></div>
+        <hr>
+
+        <h1>글자 생략</h1>
+        <p id="ellipsis">ellipsis는 너무 길면 ...으로생략해줌********************************************************</p>
+        <hr>
+
+        <h1>white-space속성</h1>
+        <p id="normal">normal은 사이     공백을       하나만 출력해주고 자동 줄바꿈을 해줌**********</p>
+        <p id="nowrap">nowrap은 사이     공백을     하나만 출력해주고 자동 줄바꿈 없음**********</p>
+        <p id="pre">pre는 사이 공백을     모두        출력해주고 자동 줄바꿈 없음**********</p>
+    </body>
+</html>

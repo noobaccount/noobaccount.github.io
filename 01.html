@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Html Input Tags</title>
+    </head>
+    <body>
+        <form>
+            <!--사용자가 입력-->
+            <!--id 속성은 page 안에서 중복으로 사용할 수 없으며, 주로 JavaScript에서 다루기 위해 지정-->
+            <!--name 속성은 page 영역에서 중복되어 사용이 가능하며, action에 해당하는 페이지에 전달할 수 있는 파라미터로 사용-->
+            <input type="text" name="이름이뭐지" value="텍스트 들어감"><br>
+            <input type="password" name="password" value="1234"><br>
+            <input type="file" name="file" value="파일"><br>
+            <input type="checkbox" name="checkbox" value="체크박스"><br>
+            <input type="hidden" type="radio" name="radio" value="라디오버튼"><br>
+            
+            <input type="button" value="버튼"><br>
+            <hr><br>
+
+            <table>
+                <tr>
+                    <td><label for="username">이름</label></td>
+                    <td><input id="username" type="text" name="username"></td>
+                </tr>
+                <tr>
+                    <td>성별</td>
+                    <td>
+                        <input id="man" type="radio" name="gender" value="m">
+                        <label for="man">남자</label>
+                        <input id="woman" type="radio" name="gender" value="w">
+                        <label for="woman">여자</label>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="가입">
+            <hr><br>
+            
+            <!--fieldset으로 그룹 정하면 legend로 그 이름 지정가능-->
+            <fieldset>
+                <legend>이름정하기</legend>
+                <select>
+                    <option>가나</option>
+                    <option>벨기에</option>
+                    <option>영국</option>
+                </select><br>
+                
+                <select multiple="multiple">
+                    <option>가나</option>
+                    <option>벨기에</option>
+                    <option>영국</option>
+                </select><br>
+    
+                <select>
+                    <optgroup label="1번">
+                        <option>1.1</option>
+                        <option>1.2</option>
+                        <option>1.3</option>
+                    </optgroup>
+                    <optgroup label="2번">
+                        <option>2.1</option>
+                        <option>2.2</option>
+                    </optgroup>
+                </select><br>
+            </fieldset>
+        </form>
+        <hr><br>
+
+        <div>
+            <h1>HTML 기본</h1>
+        </div>
+        <div>
+            <ul>
+                <li><a href="#">메뉴 - 1</a></li>
+                <li><a href="#">메뉴 - 2</a></li>
+                <li><a href="#">메뉴 - 3</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>
+                <h1>가나다라마바사</h1>
+                <p>가나다라마바사아자차카타파하</p>
+            </div>
+            <div>
+                <h1>가나다라마바사</h1>
+                <p>가나다라마바사아자차카타파하</p>
+            </div>
+        </div>
+        <div>
+            <span>아야어여오요우유으이</span>
+        </div>
+        <hr><br>
+
+        <header>
+            <h1>HTML 기본</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">메뉴 - 1</a></li>
+                <li><a href="#">메뉴 - 2</a></li>
+                <li><a href="#">메뉴 - 3</a></li>
+            </ul>
+        </nav>
+        <section>
+            <article>
+                <h1>가나다라마바사</h1>
+                <p>가나다라마바사아자차카타파하</p>
+            </article>
+            <article>
+                <h1>가나다라마바사</h1>
+                <p>가나다라마바사아자차카타파하</p>
+            </article>
+        </section>
+        <footer>
+            <span>아야어여오요우유으이</span>
+        </footer>
+    </body>
+</html>
