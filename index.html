@@ -11,7 +11,7 @@
                 #mobile_landscape{display: none;}
                 #print{display: none;}
             }
-            @media screen and (orientation:portrait){
+            @media screen and (max-width: 480px) and (orientation:portrait){
                 body{
                     background-color: blue;
                     #pc{display: none;}
@@ -20,7 +20,7 @@
                     #print{display: none;}
                 }
             }
-            @media screen and (orientation:landscape){
+            @media screen and (max-width: 768px) and (orientation:landscape){
                 body{
                     background-color: violet;
                     #pc{display: none;}
@@ -41,12 +41,11 @@
         </style>
     </head>
     <body>
-        <h1>뷰포트 설정</h1>
+        <h1>뷰포트 설정(미디어 쿼리 안에 미디어 쿼리는 작성 불가능)</h1>
         <h2 id="pc">pc는 빨간색</h2>
-        <h2 id="mobile_landscape">mobile은 가로는 파란색</h2>
+        <h2 id="mobile_landscape">mobile은 가로는 보라색</h2>
         <h2 id="mobile_portrait">mobile은 세로는 파란색</h2>
         <h2 id="print">미리보기는 초록색</h2>
-        <h2 id="landscape">수평은 보라</h2>
         <p>동백꽃<br>
             오늘도 또 우리 수탉이 막 쫓기었다.<br>
             내가 점심을 먹고 나무를 하러 갈 양으로 나올 때이었다.<br>
