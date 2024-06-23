@@ -10,9 +10,17 @@
                 #mobile{display: none;}
                 #print{display: none;}
             }
-            @media screen and (max-width:480px){
+            @media screen and (max-width:480px) and (orientation:portrait){
                 body{
                     background-color: blue;
+                    #pc{display: none;}
+                    #mobile{display: block;}
+                    #print{display: none;}
+                }
+            }
+            @media screen and (max-width:480px) and (orientation:landscape){
+                body{
+                    background-color: violet;
                     #pc{display: none;}
                     #mobile{display: block;}
                     #print{display: none;}
