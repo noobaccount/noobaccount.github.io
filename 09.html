@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jquery</title>
+        <style>
+            #box {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
+            /*#box:hover 이런식으로 하면 아래와 같이 자바스크립트를 사용하지 않아도 됨*/
+            #box.hover {
+                background-color: blue;
+                border-radius: 50px;
+            }
+            #page {
+                display: none;
+            }
+        </style>
+        <!--1번 방법. <script  src="jquery-3.7.1.min.js"></script>>-->
+        <!--2번 방법. -->
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function() {
+                var h1 = $('h1');
+                console.log(h1);
+                h1.css('color', 'red');
+                h1.css('background', 'black');
+                //text는 모든 태그 내부의 글자가 다 나옴
+                console.log($('div').text()); 
+                //html은 태그까지 나오지만 선택된 태그 하나만 나옴
+                console.log($('div').html()); 
+
+                //hover()메소드는 매개변수로 마우스를 올렸을 때, 내렸을 때의 함수가 필요
+                $('#box').hover(function() {$('#box').addClass('hover');},
+                    function() {$('#box').removeClass('hover');} 
+                );
+
+                //이거는 css에서 display 속성을 변경하는 것과 동일
+                $('#show').click(function() {
+                    $('#page').show();
+                });
+                $('#hide').click(function() {
+                    $('#page').hide();
+                });
+                $('#toggle').click(function() {
+                    $('#page').toggle();
+                });
+                $('#slideDown').click(function() {
+                    $('#page').slideDown();
+                });
+                $('#slideUp').click(function() {
+                    $('#page').slideUp();
+                });
+                $('#slideToggle').click(function() {
+                    $('#page').slideToggle(2000);
+                });
+                $('#fadeIn').click(function() {
+                    $('#page').fadeIn('slow');
+                });
+                $('#fadeOut').click(function() {
+                    $('#page').fadeOut('normal');
+                });
+                $('#fadeToggle').click(function() {
+                    $('#page').fadeToggle('fast');
+                });
+                $('#stop').click(function() {
+                    $('#page').stop();
+                })
+
+                //animate({CSS속성정의},시간,콜백함수);
+                $('#bar').css({width:100, height:100, backgroundColor:'red'}).delay(1000).animate({width:3000, height:3000, opacity:0.5, borderRadius:3000}, 5000, function() {$(this).css('backgroundColor', 'blue')});
+                $('#stopBar').click(function() {
+                    $('#bar').stop();
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <h1 class="header1">Header</h1>
+        <h1 class="header2">Header</h1>
+        <h1 class="header3">Header</h1>
+        <div><h2>header-0</h2></div>
+        <div><h2>header-1</h2></div>
+        <hr><br>
+        <div id="box"></div>
+        <hr><br>
+        <button id="show">표시</button>
+        <button id="hide">숨김</button>
+        <button id="toggle">표시 숨김 토글</button>
+        <button id="slideDown">슬라이드 표시</button>
+        <button id="slideUp">슬라이드 숨김</button>
+        <button id="slideToggle">슬라이드 표시 숨김 토글</button>
+        <button id="fadeIn">점점 표시</button>
+        <button id="fadeOut">점점 숨김</button>
+        <button id="fadeToggle">점점 표시 숨김 토글</button>
+        <button id="stop">중지</button>
+        <div id="page">
+            <h2>속도는 slow, normal, fast가 있고 직접 수치로 정할 수도 있음</h2>
+            <p>기본은 normal</p>
+        </div>
+        <hr><br>
+        <button id="stopBar">중지</button>
+        <div id="bar"></div>
+    </body>
+</html>

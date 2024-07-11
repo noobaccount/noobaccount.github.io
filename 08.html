@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>자바 스크립트</title>
+        <script>
+            window.onload = function () {
+                var headers = document.querySelectorAll('h1');
+                for(var i = 0; i < headers.length; i++) {
+                    var randomColor = 'rgb(' + Math.floor(Math.random()*256) + ',' + Math.floor(Math.random()*256) + ',' + Math.floor(Math.random()*256) + ')';
+                    headers[i].style.color = 'red';
+                    headers[i].style.background = randomColor;
+                    headers[i].innerHTML = '스크립트 적용';
+                }
+
+                var clock = document.getElementById('clock');
+                setInterval(function() {
+                    var now = new Date();
+                    clock.innerHTML = now.toString();
+                }, 1000);
+
+                //고전 이벤트 모델
+                var oldButton = document.getElementById('old');
+                oldButton.onclick = function(event) {
+                    alert(event);
+                };
+
+                //표준 이벤트 모델
+                var standardButton = document.getElementById('standard');
+                standardButton.addEventListener('click', 
+                    function() {
+                        alert('클릭');
+                });
+
+                var button = document.getElementById('button');
+                function event_hadller() { 
+                    alert("클릭");
+                }
+                //button1을 누르면 button클릭 시 클릭이 뜨게하는 기능을 추가
+                document.getElementById('button1').addEventListener('click', function(){
+                    button.addEventListener('click', event_hadller);
+                });
+                //button2를 누르면 button클릭 시 클릭이 뜨게하는 기능을 삭제
+                document.getElementById('button2').addEventListener('click', function(){
+                    button.removeEventListener('click', event_hadller);
+                });
+
+            };
+
+            //인라인 형식
+            function buttonClick() {
+                alert('클릭');
+            };
+         </script>
+    </head>
+    <body>
+        <h1>스크립트 적용이 되면 바뀔 문장</h1>
+        <h1>스크립트 적용이 되면 바뀔 문장</h1>
+        <h1>스크립트 적용이 되면 바뀔 문장</h1>
+        <h2 id="clock">시계</h2>
+        <button onclick="alert('클릭')">인라인 형식 버튼</button>
+        <button onclick="buttonClick()">인라인 형식 버튼</button><br>
+        <button id="old">고전 버튼</button><br>
+        <button id="standard">표준 버튼</button><br>
+        <button id="button">버튼</button>
+        <button id="button1">기능 추가</button>
+        <button id="button2">기능 삭제</button>
+    </body>
+</html>
